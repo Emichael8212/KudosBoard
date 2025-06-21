@@ -26,7 +26,6 @@
   background-color: white;
   padding: 5px 15px;
   border-radius: 7px;
-  transition: all 0.3s ease;
 }
 .top-btn:hover {
   cursor: pointer;
