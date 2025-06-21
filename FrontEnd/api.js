@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const getBoards = async () => {
   try {
-    const response = await axios.get(`http://localhost:3000/boards`);
+    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/boards`);
     return response.data;
   } catch (error) {
     console.error("Error fetching boards", error);
@@ -13,7 +13,7 @@ export const getBoards = async () => {
 
 export const createBoards = async (boardData) => {
   try {
-    const response = await axios.post(`http://localhost:3000/boards`, boardData);
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/boards`, boardData);
     return response.data;
   } catch (error) {
     console.error("Error fetching boards", error);
@@ -23,7 +23,7 @@ export const createBoards = async (boardData) => {
 
 export const deleteBoard = async (boardId) => {
   try {
-    const response = await axios.delete(`http://localhost:3000/boards/${boardId}`);
+    const response = await axios.delete(`${import.meta.env.VITE_BASE_URL}/boards/${boardId}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching boards", error);
@@ -32,7 +32,7 @@ export const deleteBoard = async (boardId) => {
 
 export const getCards = async (boardId) => {
   try {
-    const response = await axios.get(`http://localhost:3000/boards/${boardId}/cards`);
+    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/boards/${boardId}/cards`);
     return response.data;
   } catch (error) {
     console.error("Error fetching cards", error);
@@ -43,7 +43,7 @@ export const getCards = async (boardId) => {
 export const createCards = async (cardData, boardId) => {
   try {
     const response = await axios.post(
-      `http://localhost:3000/boards/${boardId}/cards`,
+      `${import.meta.env.VITE_BASE_URL}/boards/${boardId}/cards`,
       cardData
     );
     return response.data;
@@ -56,7 +56,7 @@ export const createCards = async (cardData, boardId) => {
 export const updateCard = async (cardData, boardId, cardId) => {
   try {
     const response = await axios.put(
-      `http://localhost:3000/boards/${boardId}/cards/${cardId}`,
+      `${import.meta.env.VITE_BASE_URL}/boards/${boardId}/cards/${cardId}`,
       cardData
     );
     return response.data;
@@ -68,7 +68,7 @@ export const updateCard = async (cardData, boardId, cardId) => {
 export const deleteCard = async (boardId, cardId) => {
   try {
     const response = await axios.delete(
-      `http://localhost:3000/boards/${boardId}/cards/${cardId}`
+      `${import.meta.env.VITE_BASE_URL}/boards/${boardId}/cards/${cardId}`
     );
     return response.data;
   } catch (error) {
@@ -80,7 +80,7 @@ export const deleteCard = async (boardId, cardId) => {
 export const updateUpvote = async (cardId) => {
   try {
     const response = await axios.put(
-      `http://localhost:3000/cards/${cardId}/upvote`,
+      `${import.meta.env.VITE_BASE_URL}/cards/${cardId}/upvote`,
     );
     return response.data;
   } catch (error) {
@@ -91,7 +91,7 @@ export const updateUpvote = async (cardId) => {
 export const getComments = async (boardId, cardId) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/boards/${boardId}/cards/${cardId}/comments`
+      `${import.meta.env.VITE_BASE_URL}/boards/${boardId}/cards/${cardId}/comments`
     );
     return response.data;
   } catch (error) {
@@ -103,7 +103,7 @@ export const getComments = async (boardId, cardId) => {
 export const createComment = async (commentData, boardId, cardId) => {
   try {
     const response = await axios.post(
-      `http://localhost:3000/boards/${boardId}/cards/${cardId}/comments`,
+      `${import.meta.env.VITE_BASE_URL}/boards/${boardId}/cards/${cardId}/comments`,
       commentData
     );
     return response.data;

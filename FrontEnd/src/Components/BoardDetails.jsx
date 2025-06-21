@@ -71,7 +71,7 @@ export default function BoardDetails(props) {
   const [selectedGif, setSelectedGif] = useState("");
 
   const handleImageSearch = async () => {
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=0eAiXr6TvPQzxp7gvjcqvl9RuTh0NYWT&q=${imageSearchQuery}&limit=2&offset=0&rating=pg&lang=en&bundle=messaging_non_clips`;
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${import.meta.env.VITE_API_KEY}&q=${imageSearchQuery}&limit=2&offset=0&rating=pg&lang=en&bundle=messaging_non_clips`;
     const options = {
       method: "GET",
       headers: {

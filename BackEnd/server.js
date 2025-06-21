@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client')
+const { PrismaClient } = require('./prisma/generated/prisma-client')
 const prisma = new PrismaClient()
 
 const cors = require('cors');
@@ -235,6 +235,18 @@ app.delete('/boards/:boardId/cards/:cardId/comments/:commentId', async (req, res
     res.status(200).json(deleteComment);
 });
 
+
+app.put('/cards/:cardId/upvote', async (req, res) => {
+    const {cardId} = req.params;
+    const createUpvotes = await prisma.card.update({
+        where: {id: parseInt(cardId)
+        },
+        data:   {
+            upvotes: {increment: 1}
+        }
+    })
+    res.status(200).json(createUpvotes)
+})
 
 const PORT = 3000
 app.listen(PORT, () => {
