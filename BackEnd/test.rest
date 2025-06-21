@@ -1,0 +1,26 @@
+###
+POST http://localhost:3000/boards/2/cards
+content-type: application/json
+
+{
+    "author": "eman",
+    "title": "Anita",
+    "description": "find sure bet",
+    "boardId": 2,
+    "gifurl": "message"
+}
+
+###
+DELETE http://localhost:3000/boards/2/cards/1 
+
+###
+POST http://localhost:3000/boards
+content-type: application/json
+
+{
+    "title": "Hallow",
+    "image": "meg",
+    "category": "Action",
+    "author": "Master Chief",
+    "cards: "[]"
+}

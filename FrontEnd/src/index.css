@@ -1,0 +1,120 @@
+
+header.dark-mode {
+    background-color: #03055B;
+}
+body.dark-mode {
+    --text-primary: #F7F7F7;
+    --text-secondary: #2a456e;
+}
+
+body.dark-mode {
+    /* Dark theme variables */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #f5f7f7;
+    --border-color: #444444;
+    --accent-color: #08065b;
+    --accent-hover:#08065b;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --button-primary: #08065b;
+    --button-secondary: #333333;
+    --button-danger: #cf4f42;
+    --button-text: #ffffff;
+    --input-bg: hsl(180, 29%, 97%);
+    --input-text: #e0e0e0;
+    --modal-overlay: rgba(0, 0, 0, 0.8);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.App {
+    height: 100%;
+    width: 100%;
+}
+
+/* Dark mode styles for common elements */
+.dark-mode .Board,
+.dark-mode .Card,
+.dark-mode .modal-create-board,
+.dark-mode .card-details-modal {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+}
+
+.dark-mode .board-title,
+.dark-mode .card-title,
+.dark-mode .board-details-header,
+.dark-mode .modal-create-board-header {
+    color: var(--text-primary);
+}
+
+.dark-mode .board-author,
+.dark-mode .card-author,
+.dark-mode .board-category {
+    color: var(--text-secondary);
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--border-color);
+}
+
+.dark-mode .board-btn,
+.dark-mode .modal-btn-submit,
+.dark-mode .search-btn,
+.dark-mode .button-create-card {
+    background-color: var(--button-primary);
+    color: var(--button-text);
+}
+
+.dark-mode .board-btn:hover,
+.dark-mode .modal-btn-submit:hover,
+.dark-mode .search-btn:hover,
+.dark-mode .button-create-card:hover {
+    background-color: var(--accent-hover);
+}
+
+.dark-mode .board-btn-delete,
+.dark-mode .delete-card,
+.dark-mode .clear-btn {
+    background-color: rgb(228, 11, 11)
+}
+
+.dark-mode .modal-create-board-overlay,
+.dark-mode .card-details-modal-overlay,
+.dark-mode .delete-confirmation-modal-overlay {
+    background-color: var(--modal-overlay);
+}
+
+/* Toggle button styles */
+.toggle-mode {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.toggle-mode.light {
+    background-color: #333333;
+    color: white;
+}
+
+.toggle-mode.dark {
+    background-color: #f0f0f0;
+    color: #333333;
+}
